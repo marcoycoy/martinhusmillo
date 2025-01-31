@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        .app {
+            /* background-image: url(background.jpg); */
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 10px;
+            align-content: center;
+
+        }
+
+        .container {
+            /* padding: 16px; */
+        }
+
+        .container {
+            /* padding: 16px; */
+        }
+
+        .container h1 h2 h3 h4 h5 {
+            color: #3D3D3D;
+        }
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+            border-radius: 5px;
+            /* align-content: center; */
+            /* text-align: center; */
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .card-container {
+            /* padding: 16px; */
+        }
+
+        .card-title {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .card-image {
+            border-radius: 50%;
+            align-content: center;
+            text-align: center;
+
+        }
+
+
+        .card-image img {
+            border-radius: 50%;
+            background-color: #3D3D3D;
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .card-container p {
+            word-wrap: break-word;
+            color: gray
+        }
+
+        .card-container img {
+            border-radius: 50%;
+            background-color: #3D3D3D;
+        }
+
+        .card-container h1 h2 h3 h4 h5 {
+            background-color: #3D3D3D;
+        }
+
+        .topnav {
+            background-color: white;
+            overflow: hidden;
+            /* box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); */
+            border-radius: 7px;
+            position: relative;
+            width: 100%;
+            gap: 10px;
+        }
+
+        .topnav a {
+
+            float: right;
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #F7F7F8;
+            color: black;
+        }
+
+        /* .topnav a.active {
+            background-color: #F5ECD5;
+            color: F7F7F8;
+        } */
+
+        .typing {
+            font-family: monospace;
+            white-space: unset;
+            overflow: hidden;
+            animation: blink-caret 0.75s step-end infinite;
+            font-size: 45px;
+            align-content: center;
+        }
+
+        .infocontainer {
+            animation-name: infomation;
+            animation-delay: 2s;
+            animation-duration: 2s;
+            opacity: 1;
+            transition: opacity 1s ease-in-out;
+        }
+
+        @keyframes infomation {
+            0% {
+                opacity: 0.1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+
+            100% {
+                opacity: 1;
+                transition: opacity 1s ease-in-out;
+            }
+        }
+
+
+        .hidden {
+            display: none;
+        }
+
+        .visible {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s forwards;
+        }
+
+        .fade-out {
+            animation: fadeOut 1s forwards;
+        }
+
+
+        .tab {
+            overflow: hidden;
+            float: right;
+            /* border: 1px solid #ccc; */
+            /* background-color: #f1f1f1; */
+        }
+
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+        }
+
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        .tab button.active {
+            background-color: #e35b5b;
+        }
+
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-top: none;
+            animation: fadeEffect 1s;
+        }
+
+        @keyframes fadeEffect {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app">
+        <div class="card">
+            <div class="card-container">
+                <div class="tab"> <button class="tablinks active" onclick="openTab(event, 'Home')">Home</button> <button
+                        class="tablinks" onclick="openTab(event, 'About')">About</button> <button class="tablinks"
+                        onclick="openTab(event, 'Services')">Services</button> <button class="tablinks"
+                        onclick="openTab(event, 'Contact')">Contact</button> </div>
+                <div id="Home" class="tabcontent" style="display: block;">
+                    <div class="card-container">
+                        <div class="container">
+                            <div class="row">
+                                <p id="typing" class="typing"></p>
+                                <!-- <div class="card-image">
+                                    <img src="self.png" style="width: 20% ;">
+                                </div> -->
+                            </div>
+
+                            <div class="row">
+                                <div class="infocontainer hidden" id="infocontainer" name="infocontainer">
+                                    <h3>Full Stack Developer</h3>
+
+                                    <ul>
+                                        <li style="margin: 10px;">
+                                            With more than 5 years web web-based and Windows-application developer
+                                            experience in the manufacturing industry with experience in application
+                                            layers,
+                                            and databases like MySQL, MySQL, and Postgres.
+                                        </li>
+                                        <li style="margin: 10px;">
+                                            Expertise in both Frontend and Backend using PHP, JavaScript, CSS, HTML,
+                                            React, and
+                                            jQuery. Proficient in various programming languages including .Net Framework
+                                            such
+                                            as VB and C#, Python, and C/C++.
+                                        </li>
+                                        <li style="margin: 10px;">
+                                            Knowledgeable setup and maintenance of server management, Linux, and Rhel
+                                            8 servers. Experienced in creating and managing jobs for Linux and .Net
+                                            Framework. Fast learner and passionate about doing the tasks given.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="About" class="tabcontent">
+                    <h3>About</h3>
+                    <p>Learn more about us in the About tab.</p>
+                </div>
+                <div id="Services" class="tabcontent">
+                    <h3>Services</h3>
+                    <p>Discover our services in the Services tab.</p>
+                </div>
+                <div id="Contact" class="tabcontent">
+                    <h3>Contact</h3>
+                    <p>Get in touch with us in the Contact tab.</p>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    </div>
+    <script>
+        
+        const text = "I'm Martin Husmillo";
+        let index = 0;
+
+
+
+        function type() {
+            
+            if (index < text.length) {
+                document.getElementById("typing").innerHTML += text.charAt(index);
+                index++;
+                setTimeout(type, 100);
+            } else {
+                const element = document.getElementById("infocontainer")
+                element.classList.remove('hidden');
+                element.classList.add('visible', 'fade-in');
+            }
+        } 
+        type();
+
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks; tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+            if(tabName == "Home"){
+                const element1 = document.getElementById("infocontainer")
+                element1.classList.remove('visible');
+                element1.classList.add('hidden');
+
+                console.log("test");
+                index = 0;
+                document.getElementById("typing").innerHTML = "";
+                document.getElementById("typing").innerHTML += text.charAt(index);
+                index++;
+                setTimeout(type, 100);
+                const element = document.getElementById("infocontainer")
+                element.classList.remove('hidden');
+                element.classList.add('visible', 'fade-in');
+            }else{
+               
+                
+            }
+        }
+
+    </script>
+</body>
+
+</html>
